@@ -25,3 +25,4 @@ hdfs-initialized-indicator
 .vscode/
 .history
 env.yaml
+.venv
