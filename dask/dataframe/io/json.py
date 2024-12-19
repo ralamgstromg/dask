@@ -5,7 +5,7 @@ import os
 from functools import partial
 from itertools import zip_longest
 
-import pandas as pd
+import fireducks.pandas as pd
 from fsspec.core import open_files
 
 import dask.dataframe as dd
@@ -104,7 +104,7 @@ def write_json_partition(df, openfile, kwargs):
     return os.path.normpath(openfile.path)
 
 
-@dataframe_creation_dispatch.register_inplace("pandas")
+@dataframe_creation_dispatch.register_inplace("fireducks.pandas")
 @insert_meta_param_description
 def read_json(
     url_path,

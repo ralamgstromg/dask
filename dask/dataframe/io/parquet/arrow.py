@@ -9,7 +9,7 @@ from datetime import datetime
 from functools import reduce
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pyarrow as pa
 import pyarrow.fs as pa_fs
 import pyarrow.parquet as pq
@@ -206,9 +206,9 @@ def _frag_subset(old_frag, row_groups):
 def _get_pandas_metadata(schema):
     """Get pandas-specific metadata from schema."""
 
-    has_pandas_metadata = schema.metadata is not None and b"pandas" in schema.metadata
+    has_pandas_metadata = schema.metadata is not None and b"fireducks.pandas" in schema.metadata
     if has_pandas_metadata:
-        return json.loads(schema.metadata[b"pandas"].decode("utf8"))
+        return json.loads(schema.metadata[b"fireducks.pandas"].decode("utf8"))
     else:
         return {}
 
@@ -531,8 +531,8 @@ class ArrowDatasetEngine(Engine):
             )
             if use_nullable_dtypes:
                 config_backend = dask.config.get("dataframe.dtype_backend", None)
-                # Meaning of old "pandas" config is now the same as "numpy_nullable"
-                if config_backend in (None, "pandas"):
+                # Meaning of old "fireducks.pandas" config is now the same as "numpy_nullable"
+                if config_backend in (None, "fireducks.pandas"):
                     config_backend = "numpy_nullable"
                 dtype_backend = config_backend
 
@@ -771,11 +771,11 @@ class ArrowDatasetEngine(Engine):
             arrow_schema = tail_metadata.schema.to_arrow_schema()
             names = arrow_schema.names
             has_pandas_metadata = (
-                arrow_schema.metadata is not None and b"pandas" in arrow_schema.metadata
+                arrow_schema.metadata is not None and b"fireducks.pandas" in arrow_schema.metadata
             )
             if has_pandas_metadata:
                 pandas_metadata = json.loads(
-                    arrow_schema.metadata[b"pandas"].decode("utf8")
+                    arrow_schema.metadata[b"fireducks.pandas"].decode("utf8")
                 )
                 categories = [
                     c["name"]

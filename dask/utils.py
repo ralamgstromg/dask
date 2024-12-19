@@ -1507,7 +1507,7 @@ def is_arraylike(x) -> bool:
 def is_dataframe_like(df) -> bool:
     """Looks like a Pandas DataFrame"""
     if (df.__class__.__module__, df.__class__.__name__) == (
-        "pandas.core.frame",
+        "fireducks.pandas.core.frame",
         "DataFrame",
     ):
         # fast exec for most likely input
@@ -2180,7 +2180,7 @@ def show_versions() -> None:
 
     deps = [
         "numpy",
-        "pandas",
+        "fireducks",
         "cloudpickle",
         "fsspec",
         "bokeh",

@@ -522,7 +522,7 @@ def test_stack_rechunk():
 
 
 def test_stack_unknown_chunksizes():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     a_df = pd.DataFrame({"x": np.arange(12)})
@@ -638,7 +638,7 @@ def test_concatenate_types(dtypes):
 
 
 def test_concatenate_unknown_axes():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     a_df = pd.DataFrame({"x": np.arange(12)})
@@ -2261,7 +2261,7 @@ def test_to_hdf5():
 
 
 def test_to_dask_dataframe():
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     a = da.ones((4,), chunks=(2,))
     d = a.to_dask_dataframe()
@@ -2849,7 +2849,7 @@ def test_asarray_array_dtype(asarray):
 @pytest.mark.parametrize("asarray", [da.asarray, da.asanyarray])
 def test_asarray_dask_dataframe(asarray):
     # https://github.com/dask/dask/issues/3885
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     s = dd.from_pandas(pd.Series([1, 2, 3, 4]), 2)
@@ -2897,7 +2897,7 @@ def test_asanyarray():
 
 
 def test_asanyarray_dataframe():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     df = pd.DataFrame({"x": [1, 2, 3]})
@@ -4648,7 +4648,7 @@ def test_normalize_chunks_nan():
 
 
 def test_pandas_from_dask_array():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     a = da.ones((12,), chunks=4)
     s = pd.Series(a, index=range(12))
     assert s.dtype == a.dtype
@@ -5403,7 +5403,7 @@ def test_chunk_assignment_invalidates_cached_properties():
 
 
 def test_map_blocks_series():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     import dask.dataframe as dd
 
     if dd._dask_expr_enabled():
@@ -5420,7 +5420,7 @@ def test_map_blocks_series():
 
 @pytest.mark.xfail(reason="need to remove singleton index dimension")
 def test_map_blocks_dataframe():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     import dask.dataframe as dd
     from dask.dataframe.utils import assert_eq as dd_assert_eq
 

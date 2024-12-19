@@ -4,9 +4,9 @@ import warnings
 from functools import partial
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_extension_array_dtype
-from pandas.errors import PerformanceWarning
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_extension_array_dtype
+from fireducks.pandas.errors import PerformanceWarning
 from tlz import partition
 
 from dask.dataframe._compat import (

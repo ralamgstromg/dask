@@ -27,7 +27,7 @@ for selecting just columns.
 .. code-block:: python
 
    >>> import dask.dataframe as dd
-   >>> import pandas as pd
+   >>> import fireducks.pandas as pd
    >>> df = pd.DataFrame({"A": [1, 2, 3], "B": [3, 4, 5]},
    ...                   index=['a', 'b', 'c'])
    >>> ddf = dd.from_pandas(df, npartitions=2)

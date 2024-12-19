@@ -9,14 +9,14 @@ import pytest
 
 from dask.datasets import timeseries
 
-pytest.importorskip("pandas")
+pytest.importorskip("fireducks.pandas")
 pyspark = pytest.importorskip("pyspark")
 pa = pytest.importorskip("pyarrow")
 pytest.importorskip("fastparquet")
 dd = pytest.importorskip("dask.dataframe")
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 
 from dask.dataframe.utils import assert_eq
 

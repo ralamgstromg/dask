@@ -6,7 +6,7 @@ import pytest
 
 from dask.array.numpy_compat import NUMPY_GE_200
 
-pd = pytest.importorskip("pandas")
+pd = pytest.importorskip("fireducks.pandas")
 
 import numpy as np
 
@@ -503,7 +503,7 @@ def test_2args_with_array(ufunc, pandas, darray):
 @pytest.mark.parametrize("redfunc", ["sum", "prod", "min", "max", "mean"])
 @pytest.mark.parametrize("ufunc", _BASE_UFUNCS)
 @pytest.mark.parametrize(
-    "pandas",
+    "fireducks.pandas",
     [
         pd.Series(np.abs(np.random.randn(100))),
         pd.DataFrame(
@@ -555,7 +555,7 @@ def test_ufunc_with_reduction(redfunc, ufunc, pandas):
 
 
 @pytest.mark.parametrize(
-    "pandas",
+    "fireducks.pandas",
     [
         pd.Series(np.random.randint(1, 100, size=100)),
         pd.DataFrame(

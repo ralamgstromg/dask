@@ -11,7 +11,7 @@ from decimal import Decimal
 from unittest.mock import MagicMock
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
 
@@ -608,7 +608,7 @@ def test_roundtrip_nullable_dtypes(tmp_path):
 @pytest.mark.parametrize(
     "dtype_backend",
     [
-        "pandas",
+        "fireducks.pandas",
         "pyarrow",
     ],
 )
@@ -617,7 +617,7 @@ def test_use_nullable_dtypes(tmp_path, dtype_backend, engine):
     Test reading a parquet file without pandas metadata,
     but forcing use of nullable dtypes where appropriate
     """
-    dtype_extra = "" if dtype_backend == "pandas" else "[pyarrow]"
+    dtype_extra = "" if dtype_backend == "fireducks.pandas" else "[pyarrow]"
     df = pd.DataFrame(
         {
             "a": pd.Series([1, 2, pd.NA, 3, 4], dtype=f"Int64{dtype_extra}"),
@@ -4100,8 +4100,8 @@ def test_custom_metadata(tmpdir, engine):
                 assert _md[k] == custom_metadata[k]
 
     # Make sure we raise an error if the custom metadata
-    # includes a b"pandas" key
-    custom_metadata = {b"pandas": b"my_new_pandas_md"}
+    # includes a b"fireducks.pandas" key
+    custom_metadata = {b"fireducks.pandas": b"my_new_pandas_md"}
     with pytest.raises(ValueError) as e:
         dd.from_pandas(df, npartitions=2).to_parquet(
             path,

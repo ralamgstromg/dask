@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
-from pandas.tests.extension.decimal.array import DecimalDtype
+from fireducks.pandas.tests.extension.decimal.array import DecimalDtype
 
 from dask.dataframe._pyarrow import (
     is_object_string_dataframe,

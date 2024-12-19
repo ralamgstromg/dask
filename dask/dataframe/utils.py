@@ -11,8 +11,8 @@ from numbers import Number
 from typing import TypeVar, overload
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_dtype_equal
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_dtype_equal
 
 import dask
 from dask.base import get_scheduler, is_dask_collection

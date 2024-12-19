@@ -5,7 +5,7 @@ import contextlib
 import numpy as np
 import pytest
 
-pd = pytest.importorskip("pandas")
+pd = pytest.importorskip("fireducks.pandas")
 import dask.dataframe as dd
 from dask.dataframe._compat import PANDAS_GE_210, PANDAS_GE_300
 from dask.dataframe._pyarrow import to_pyarrow_string

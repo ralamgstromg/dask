@@ -148,7 +148,7 @@ def s3_with_yellow_tripdata(s3):
       for mm from 01 - 12.
     """
     np = pytest.importorskip("numpy")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
 
     data = {
         "VendorID": {0: 2, 1: 1, 2: 1, 3: 1, 4: 1},
@@ -464,7 +464,7 @@ def engine(request):
 @pytest.mark.parametrize("metadata_file", [True, False])
 def test_parquet(s3, engine, s3so, metadata_file):
     dd = pytest.importorskip("dask.dataframe")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     np = pytest.importorskip("numpy")
 
     url = "s3://%s/test.parquet" % test_bucket_name
@@ -560,7 +560,7 @@ def test_parquet(s3, engine, s3so, metadata_file):
 
 def test_parquet_append(s3, engine, s3so):
     dd = pytest.importorskip("dask.dataframe")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     np = pytest.importorskip("numpy")
 
     url = "s3://%s/test.parquet.append" % test_bucket_name
@@ -613,7 +613,7 @@ def test_parquet_append(s3, engine, s3so):
 
 def test_parquet_wstoragepars(s3, s3so, engine):
     dd = pytest.importorskip("dask.dataframe")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     np = pytest.importorskip("numpy")
 
     url = "s3://%s/test.parquet" % test_bucket_name

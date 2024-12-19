@@ -44,7 +44,7 @@ from dask.utils_test import dec, import_or_none, inc
 da = import_or_none("dask.array")
 dd = import_or_none("dask.dataframe")
 np = import_or_none("numpy")
-pd = import_or_none("pandas")
+pd = import_or_none("fireducks.pandas")
 
 # Arbitrary dask keys
 h1 = (1.2, "foo", (3,))
@@ -67,7 +67,7 @@ def test_is_dask_collection():
 
 
 def test_is_dask_collection_dask_expr():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dx = pytest.importorskip("dask_expr")
 
     df = pd.Series([1, 2, 3])
@@ -77,7 +77,7 @@ def test_is_dask_collection_dask_expr():
 
 
 def test_is_dask_collection_dask_expr_does_not_materialize():
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dx = pytest.importorskip("dask_expr")
 
     class DoNotMaterialize(dx._core.Expr):
@@ -736,7 +736,7 @@ def test_default_imports():
         "dask.array",
         "dask.dataframe",
         "numpy",
-        "pandas",
+        "fireducks.pandas",
         "partd",
         "s3fs",
         "distributed",
@@ -1092,7 +1092,7 @@ def check_default_scheduler(module, collection, expected, emscripten):
 def test_emscripten_default_scheduler(params):
     pytest.importorskip("numpy")
     pytest.importorskip("dask.array")
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled() and "dask.dataframe" in params:
         pytest.skip("objects not available")

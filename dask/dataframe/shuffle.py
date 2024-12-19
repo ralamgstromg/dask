@@ -11,9 +11,9 @@ from collections.abc import Callable, Mapping, Sequence
 from typing import Any, Literal
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import tlz as toolz
-from pandas.api.types import is_numeric_dtype
+from fireducks.pandas.api.types import is_numeric_dtype
 
 from dask import config
 from dask.base import compute, compute_as_if_collection, is_dask_collection, tokenize

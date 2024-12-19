@@ -192,7 +192,7 @@ So you (or your users) can now create and store a dask ``DataFrame`` or
 
    >>> from decimal import Decimal
    >>> import dask.dataframe as dd
-   >>> import pandas as pd
+   >>> import fireducks.pandas as pd
    >>> from pandas.tests.extension.decimal import DecimalArray
    >>> s = pd.Series(DecimalArray([Decimal('0.0')] * 10))
    >>> ds = dd.from_pandas(s, 3)

@@ -1604,7 +1604,7 @@ class Bag(DaskMethodsMixin):
         1      Bob      200
         0  Charlie      300
         """
-        import pandas as pd
+        import fireducks.pandas as pd
 
         import dask.dataframe as dd
 
@@ -2609,7 +2609,7 @@ def split(seq, n):
 
 
 def to_dataframe(seq, columns, dtypes):
-    import pandas as pd
+    import fireducks.pandas as pd
     from packaging.version import Version
 
     seq = reify(seq)

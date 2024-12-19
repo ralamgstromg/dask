@@ -8,7 +8,7 @@ from datetime import datetime
 from functools import partial
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask
@@ -3096,7 +3096,7 @@ def test_groupby_split_out_multiindex(split_out, column):
 @pytest.mark.parametrize(
     "backend",
     [
-        "pandas",
+        "fireducks.pandas",
         pytest.param("cudf", marks=pytest.mark.gpu),
     ],
 )

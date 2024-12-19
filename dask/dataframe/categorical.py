@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import defaultdict
 from numbers import Integral
 
-import pandas as pd
+import fireducks.pandas as pd
 from pandas.api.types import is_scalar
 from tlz import partition_all
 

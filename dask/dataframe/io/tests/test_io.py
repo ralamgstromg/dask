@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask
@@ -539,7 +539,7 @@ def test_from_dask_array_unknown_width_error():
 @pytest.mark.gpu
 @pytest.mark.parametrize(
     "array_backend, df_backend",
-    [("cupy", "cudf"), ("numpy", "pandas")],
+    [("cupy", "cudf"), ("numpy", "fireducks.pandas")],
 )
 def test_from_array_dispatching(array_backend, df_backend):
     # Check array -> dataframe dispatching
@@ -1073,7 +1073,7 @@ def test_from_map_column_projection():
 
 
 @pytest.mark.gpu
-@pytest.mark.parametrize("backend", ["pandas", "cudf"])
+@pytest.mark.parametrize("backend", ["fireducks.pandas", "cudf"])
 def test_from_dict_backends(backend):
     _lib = pytest.importorskip(backend)
     with config.set({"dataframe.backend": backend}):

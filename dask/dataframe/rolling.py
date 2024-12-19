@@ -4,9 +4,9 @@ import datetime
 import warnings
 from numbers import Integral
 
-import pandas as pd
-from pandas.api.types import is_datetime64_any_dtype
-from pandas.core.window import Rolling as pd_Rolling
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_datetime64_any_dtype
+from fireducks.pandas.core.window import Rolling as pd_Rolling
 
 from dask.array.core import normalize_arg
 from dask.base import tokenize

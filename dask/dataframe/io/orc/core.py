@@ -72,7 +72,7 @@ def _get_engine(
     return engine
 
 
-@dataframe_creation_dispatch.register_inplace("pandas")
+@dataframe_creation_dispatch.register_inplace("fireducks.pandas")
 def read_orc(
     path,
     engine="pyarrow",

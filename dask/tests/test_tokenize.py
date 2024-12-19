@@ -30,7 +30,7 @@ dd = import_or_none("dask.dataframe")
 np = import_or_none("numpy")
 sp = import_or_none("scipy.sparse")
 pa = import_or_none("pyarrow")
-pd = import_or_none("pandas")
+pd = import_or_none("fireducks.pandas")
 numba = import_or_none("numba")
 
 

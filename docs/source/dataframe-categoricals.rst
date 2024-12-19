@@ -90,7 +90,7 @@ It is possible to manually load the categories:
 .. code-block:: python
 
     >>> import dask.dataframe as dd
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> df = pd.DataFrame(data=list('abcaabbcc'), columns=['col'])
     >>> df.col = df.col.astype('category')
     >>> ddf = dd.from_pandas(df, npartitions=1)

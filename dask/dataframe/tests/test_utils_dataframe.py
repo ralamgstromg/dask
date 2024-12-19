@@ -5,7 +5,7 @@ import warnings
 from collections.abc import Iterable
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
 
@@ -489,7 +489,7 @@ def test_check_meta_typename():
         check_meta(ddf, df)
 
     assert "dask" in str(info.value)
-    assert "pandas" in str(info.value)
+    assert "fireducks.pandas" in str(info.value)
 
 
 @pytest.mark.parametrize("frame_value_counts", [True, False])

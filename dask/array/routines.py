@@ -2022,7 +2022,7 @@ def around(x, decimals=0):
 
 
 def _asarray_isnull(values):
-    import pandas as pd
+    import fireducks.pandas as pd
 
     return np.asarray(pd.isnull(values))
 
@@ -2030,7 +2030,7 @@ def _asarray_isnull(values):
 def isnull(values):
     """pandas.isnull for dask arrays"""
     # eagerly raise ImportError, if pandas isn't available
-    import pandas as pd  # noqa
+    import fireducks.pandas as pd  # noqa
 
     return elemwise(_asarray_isnull, values, dtype="bool")
 

@@ -755,9 +755,9 @@ def test_attribute_of_attribute():
 
 
 def test_check_meta_flag():
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
-    from pandas import Series
+    from fireducks.pandas import Series
 
     a = Series(["a", "b", "a"], dtype="category")
     b = Series(["a", "c", "a"], dtype="category")

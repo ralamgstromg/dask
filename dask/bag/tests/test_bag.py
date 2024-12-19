@@ -780,7 +780,7 @@ def test_from_long_sequence():
 
 
 def test_from_empty_sequence():
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     pytest.importorskip("dask.dataframe")
     b = db.from_sequence([])
     assert b.npartitions == 1
@@ -882,7 +882,7 @@ def test_args():
 
 
 def test_to_dataframe():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     def check_parts(df, sol):
@@ -1689,7 +1689,7 @@ def test_dask_layers_to_delayed(optimize):
 
 
 def test_to_dataframe_optimize_graph():
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     from dask.dataframe.utils import assert_eq as assert_eq_df

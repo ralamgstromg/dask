@@ -6,7 +6,7 @@ Also see extension.py
 
 from __future__ import annotations
 
-import pandas as pd
+import fireducks.pandas as pd
 
 from dask import is_dask_collection
 from dask.utils import Dispatch

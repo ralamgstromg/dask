@@ -75,7 +75,7 @@ def test_array_slice_deps():
 
 
 def _dataframe_shuffle(tmpdir):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Perform a computation using an HLG-based shuffle
@@ -84,7 +84,7 @@ def _dataframe_shuffle(tmpdir):
 
 
 def _dataframe_tree_reduction(tmpdir):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Perform a computation using an HLG-based tree reduction
@@ -93,7 +93,7 @@ def _dataframe_tree_reduction(tmpdir):
 
 
 def _dataframe_broadcast_join(tmpdir):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Perform a computation using an HLG-based broadcast join
@@ -137,7 +137,7 @@ def test_fractional_slice():
 
 def _pq_pyarrow(tmpdir):
     pytest.importorskip("pyarrow")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     dd.from_pandas(pd.DataFrame({"a": range(10)}), npartitions=2).to_parquet(
@@ -151,7 +151,7 @@ def _pq_pyarrow(tmpdir):
 
 def _pq_fastparquet(tmpdir):
     pytest.importorskip("fastparquet")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     df = dd.from_pandas(pd.DataFrame({"a": range(10)}), npartitions=2)
@@ -161,7 +161,7 @@ def _pq_fastparquet(tmpdir):
 
 
 def _read_csv(tmpdir):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     dd.from_pandas(
@@ -229,7 +229,7 @@ def test_dataframe_cull_key_dependencies(op):
     # output graph with incorrect key_dependencies for
     # "complex" DataFrame Layers
     # See: https://github.com/dask/dask/pull/9267
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled():
         pytest.skip("not supported")
@@ -246,7 +246,7 @@ def test_dataframe_cull_key_dependencies_materialized():
     # Test that caching of MaterializedLayer
     # dependencies during culling doesn't break
     # the result of ``get_all_dependencies``
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     datasets = pytest.importorskip("dask.datasets")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled():

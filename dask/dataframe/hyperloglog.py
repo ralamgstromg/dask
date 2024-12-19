@@ -13,8 +13,8 @@ in
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
-from pandas.util import hash_pandas_object
+import fireducks.pandas as pd
+from fireducks.pandas.util import hash_pandas_object
 
 
 def compute_first_bit(a):

@@ -13,10 +13,10 @@ from operator import add
 from textwrap import dedent
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
-from pandas.errors import PerformanceWarning
-from pandas.io.formats import format as pandas_format
+from fireducks.pandas.errors import PerformanceWarning
+from fireducks.pandas.io.formats import format as pandas_format
 
 import dask
 import dask.array as da
@@ -5536,7 +5536,7 @@ def test_meta_error_message():
 
     assert "Series" in str(info.value)
     assert "DataFrame" in str(info.value)
-    assert "pandas" in str(info.value)
+    assert "fireducks.pandas" in str(info.value)
 
 
 def test_map_index():
@@ -6107,7 +6107,7 @@ def test_pyarrow_decimal_extension_dtype():
 
 def test_to_backend():
     # Test that `DataFrame.to_backend` works as expected
-    with dask.config.set({"dataframe.backend": "pandas"}):
+    with dask.config.set({"dataframe.backend": "fireducks.pandas"}):
         # Start with pandas-backed data
         df = dd.from_dict({"a": range(10)}, npartitions=2)
         assert isinstance(df._meta, pd.DataFrame)

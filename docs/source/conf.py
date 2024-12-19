@@ -329,7 +329,7 @@ extlinks = {
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
-    "pandas": (
+    "fireducks.pandas": (
         "https://pandas.pydata.org/pandas-docs/stable/",
         "https://pandas.pydata.org/pandas-docs/stable/objects.inv",
     ),

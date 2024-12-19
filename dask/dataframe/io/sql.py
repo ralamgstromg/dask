@@ -3,7 +3,7 @@ from __future__ import annotations
 import warnings
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 
 import dask.dataframe as dd
 from dask.base import compute as dask_compute
@@ -531,7 +531,7 @@ def to_sql(
     --------
     Create a table from scratch with 4 rows.
 
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> import dask.dataframe as dd
     >>> df = pd.DataFrame([ {'i':i, 's':str(i)*2 } for i in range(4) ])
     >>> ddf = dd.from_pandas(df, npartitions=2)

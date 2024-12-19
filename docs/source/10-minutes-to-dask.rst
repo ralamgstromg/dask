@@ -18,7 +18,7 @@ We normally import Dask as follows:
 .. code-block:: python
 
    >>> import numpy as np
-   >>> import pandas as pd
+   >>> import fireducks.pandas as pd
 
    >>> import dask.dataframe as dd
    >>> import dask.array as da

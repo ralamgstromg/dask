@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date, time
 from decimal import Decimal
 
-import pandas as pd
+import fireducks.pandas as pd
 
 from dask.dataframe.extensions import make_array_nonempty, make_scalar
 

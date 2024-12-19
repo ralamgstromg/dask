@@ -7,7 +7,7 @@ import pytest
 import dask.dataframe as dd
 from dask.dataframe.utils import assert_eq
 
-pd = pytest.importorskip("pandas")
+pd = pytest.importorskip("fireducks.pandas")
 
 from pandas.tests.extension.decimal.array import DecimalArray, DecimalDtype
 

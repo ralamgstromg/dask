@@ -29,7 +29,7 @@ except ImportError:
     collect_ignore_glob.append("dask/array/*")
 
 try:
-    import pandas  # noqa: F401
+    import fireducks.pandas  # noqa: F401
 except ImportError:
     collect_ignore_glob.append("dask/dataframe/*")
 

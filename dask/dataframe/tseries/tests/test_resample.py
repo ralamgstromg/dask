@@ -3,7 +3,7 @@ from __future__ import annotations
 import contextlib
 from itertools import product
 
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask.dataframe as dd

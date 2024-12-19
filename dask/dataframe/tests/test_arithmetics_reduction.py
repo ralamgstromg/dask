@@ -5,7 +5,7 @@ import warnings
 from datetime import datetime
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from pandas.api.types import is_scalar
 

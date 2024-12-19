@@ -58,7 +58,7 @@ Dask DataFrame copies pandas, and so should be familiar to most users
 
               .. code-block:: python
 
-                  >>> import pandas as pd
+                  >>> import fireducks.pandas as pd
 
                   >>> df = pd.read_parquet('s3://mybucket/myfile.parquet')
                   >>> df.head()
@@ -89,7 +89,7 @@ Dask DataFrame copies pandas, and so should be familiar to most users
 
               .. code-block:: python
 
-                  >>> import pandas as pd
+                  >>> import fireducks.pandas as pd
 
                   >>> df = df[df.value >= 0]
                   >>> joined = df.merge(other, on="account")
@@ -125,7 +125,7 @@ Dask DataFrame copies pandas, and so should be familiar to most users
 
               .. code-block:: python
 
-                  >>> import pandas as pd
+                  >>> import fireducks.pandas as pd
                   >>> import xgboost
                   >>> from sklearn.cross_validation import train_test_split
 

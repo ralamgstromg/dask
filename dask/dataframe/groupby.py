@@ -9,8 +9,8 @@ from functools import partial, wraps
 from numbers import Integral
 
 import numpy as np
-import pandas as pd
-from pandas.core.apply import reconstruct_func, validate_func_kwargs
+import fireducks.pandas as pd
+from fireducks.pandas.core.apply import reconstruct_func, validate_func_kwargs
 
 from dask.base import is_dask_collection, tokenize
 from dask.core import flatten
@@ -3005,7 +3005,7 @@ class SeriesGroupBy(_GroupBy):
         """
         Examples
         --------
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> d = {'col1': [1, 2, 3, 4], 'col2': [5, 6, 7, 8]}
         >>> df = pd.DataFrame(data=d)

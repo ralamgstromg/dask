@@ -644,7 +644,7 @@ def test_derived_from_func():
 
 
 def test_derived_from_dask_dataframe():
-    dd = pytest.importorskip("pandas")
+    dd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled():
         pytest.xfail("we don't have docs yet")
@@ -922,7 +922,7 @@ def test_tmpfile_naming():
 
 def test_get_meta_library():
     np = pytest.importorskip("numpy")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     da = pytest.importorskip("dask.array")
     dd = pytest.importorskip("dask.dataframe")
 

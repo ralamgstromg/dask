@@ -4,7 +4,7 @@ from __future__ import annotations
 from textwrap import dedent
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask.array as da

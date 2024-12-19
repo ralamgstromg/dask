@@ -62,8 +62,8 @@ import warnings
 from functools import partial, wraps
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_dtype_equal
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_dtype_equal
 from tlz import merge_sorted, unique
 
 from dask.base import is_dask_collection, tokenize

@@ -9,7 +9,7 @@ from unittest import mock
 
 import pytest
 
-pd = pytest.importorskip("pandas")
+pd = pytest.importorskip("fireducks.pandas")
 dd = pytest.importorskip("dask.dataframe")
 
 import fsspec

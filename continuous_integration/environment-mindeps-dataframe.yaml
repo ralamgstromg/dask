@@ -15,6 +15,7 @@ dependencies:
   # optional dependencies pulled in by pip install dask[dataframe]
   - numpy=1.24
   - pandas=2.0
+  - fireducks=1.1.4
   # test dependencies
   - pre-commit
   - pytest

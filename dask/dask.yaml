@@ -7,7 +7,7 @@ tokenize:
   ensure-deterministic: false  # If true, tokenize will error instead of falling back to uuids
 
 dataframe:
-  backend: "pandas"  # Backend dataframe library for input IO and data creation
+  backend: "fireducks.pandas"  # Backend dataframe library for input IO and data creation
   shuffle:
     method: null
     compression: null  # compression for on disk-shuffling. Partd supports ZLib, BZ2, SNAPPY

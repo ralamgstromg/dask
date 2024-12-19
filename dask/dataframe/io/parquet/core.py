@@ -5,7 +5,7 @@ import math
 import warnings
 from typing import Literal
 
-import pandas as pd
+import fireducks.pandas as pd
 import tlz as toolz
 from fsspec.core import get_fs_token_paths
 from fsspec.utils import stringify_path
@@ -181,7 +181,7 @@ class ToParquetFunctionWrapper:
         )
 
 
-@dataframe_creation_dispatch.register_inplace("pandas")
+@dataframe_creation_dispatch.register_inplace("fireducks.pandas")
 def read_parquet(
     path,
     columns=None,
@@ -280,7 +280,7 @@ def read_parquet(
         ``_metadata`` file) to calculate divisions for the output DataFrame
         collection. Divisions will not be calculated if statistics are missing.
         This option will be ignored if ``index`` is not specified and there is
-        no physical index column specified in the custom "pandas" Parquet
+        no physical index column specified in the custom "fireducks.pandas" Parquet
         metadata. Note that ``calculate_divisions=True`` may be extremely slow
         when no global ``_metadata`` file is present, especially when reading
         from remote storage. Set this to ``True`` only when known divisions
@@ -754,7 +754,7 @@ def to_parquet(
     custom_metadata : dict, default None
         Custom key/value metadata to include in all footer metadata (and
         in the global "_metadata" file, if applicable).  Note that the custom
-        metadata may not contain the reserved b"pandas" key.
+        metadata may not contain the reserved b"fireducks.pandas" key.
     write_metadata_file : bool or None, default None
         Whether to write the special ``_metadata`` file. If ``None`` (the
         default), a ``_metadata`` file will only be written if ``append=True``
@@ -939,7 +939,7 @@ def to_parquet(
         # Not writing index - might as well drop it
         df = df.reset_index(drop=True)
 
-    if custom_metadata and b"pandas" in custom_metadata.keys():
+    if custom_metadata and b"fireducks.pandas" in custom_metadata.keys():
         raise ValueError(
             "User-defined key/value metadata (custom_metadata) can not "
             "contain a b'pandas' key.  This key is reserved by Pandas, "

@@ -3,10 +3,10 @@ from __future__ import annotations
 import warnings
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
-from pandas.api.types import is_object_dtype
+from fireducks.pandas.api.types import is_object_dtype
 
 import dask.dataframe as dd
 from dask._compatibility import PY_VERSION
@@ -1144,7 +1144,7 @@ def test_merge_how_raises():
     "engine",
     [
         pytest.param(
-            "pandas",
+            "fireducks.pandas",
             marks=pytest.mark.xfail(
                 reason="Pandas does not support leftsemi or leftanti"
             ),
@@ -2503,7 +2503,7 @@ def test_dtype_equality_warning():
 
 
 @pytest.mark.parametrize(
-    "engine", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "engine", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 def test_groupby_concat_cudf(engine):
     # NOTE: Issue #5643 Reproducer

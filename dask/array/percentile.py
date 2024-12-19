@@ -23,11 +23,11 @@ def _percentile(a, q, method="linear"):
         q = list(q)
     if a.dtype.name == "category":
         result = np.percentile(a.cat.codes, q, method=method)
-        import pandas as pd
+        import fireducks.pandas as pd
 
         return pd.Categorical.from_codes(result, a.dtype.categories, a.dtype.ordered), n
     if type(a.dtype).__name__ == "DatetimeTZDtype":
-        import pandas as pd
+        import fireducks.pandas as pd
 
         if isinstance(a, (pd.Series, pd.Index)):
             a = a.values
@@ -255,7 +255,7 @@ def merge_percentiles(finalq, qs, vals, method="lower", Ns=None, raise_on_nan=Tr
         result = merge_percentiles(
             finalq, qs, [v.codes for v in vals], method, Ns, raise_on_nan
         )
-        import pandas as pd
+        import fireducks.pandas as pd
 
         return pd.Categorical.from_codes(result, vals[0].categories, vals[0].ordered)
     if not np.issubdtype(vals[0].dtype, np.number):

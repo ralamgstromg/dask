@@ -7,7 +7,7 @@ name = "dask"
 description = "Parallel PyData with Task Scheduling"
 maintainers = [{name = "Matthew Rocklin", email = "mrocklin@gmail.com"}]
 license = {text = "BSD-3-Clause"}
-keywords = ["task-scheduling parallel numpy pandas pydata"]
+keywords = ["task-scheduling parallel numpy fireducks pydata"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -52,7 +52,7 @@ array = ["numpy >= 1.24"]
 bag = []
 dataframe = [
     "dask[array]",
-    "pandas >= 2.0",
+    "fireducks >= 1.1.4",
     "dask-expr >= 1.1, <1.2",  # dask-expr pins the dask version
 ]
 distributed = ["distributed == 2024.12.1"]
@@ -68,7 +68,7 @@ complete = [
     "lz4 >= 4.3.2",
 ]
 test = [
-    "pandas[test]",
+    #"pandas[test]",
     "pytest",
     "pytest-cov",
     "pytest-rerunfailures",
@@ -126,7 +126,7 @@ markers = [
 addopts = "-v -rsfE --durations=10 --color=yes --cov-config=pyproject.toml"
 filterwarnings = [
     "error:::dask[.*]",
-    "error:::pandas[.*]",
+    "error:::fireducks[.*]",
     "error:::numpy[.*]",
     "error:::distributed[.*]",
     # From https://github.com/numpy/numpy/issues/20225

@@ -266,9 +266,9 @@ def _normalize_dataclass(obj):
     return normalize_object(type(obj)), params, fields
 
 
-@normalize_token.register_lazy("pandas")
+@normalize_token.register_lazy("fireducks.pandas")
 def register_pandas():
-    import pandas as pd
+    import fireducks.pandas as pd
 
     @normalize_token.register(pd.Index)
     def normalize_index(ind):

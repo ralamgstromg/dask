@@ -252,7 +252,7 @@ def test_subs_with_unfriendly_eq():
 
 def test_subs_with_surprisingly_friendly_eq():
     try:
-        import pandas as pd
+        import fireducks.pandas as pd
     except ImportError:
         return
     else:

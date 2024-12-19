@@ -16,7 +16,7 @@ from functools import partial
 from unittest import mock
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask
@@ -705,7 +705,7 @@ def test_set_index_sorts():
 
 
 @pytest.mark.parametrize(
-    "engine", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "engine", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 def test_set_index(engine):
     if engine == "cudf":
@@ -763,7 +763,7 @@ def test_set_index_deprecated_shuffle_keyword(shuffle_method):
 
 
 @pytest.mark.parametrize(
-    "engine", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "engine", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 def test_set_index_interpolate(engine):
     if engine == "cudf":
@@ -792,7 +792,7 @@ def test_set_index_interpolate(engine):
 
 
 @pytest.mark.parametrize(
-    "engine", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "engine", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 def test_set_index_interpolate_int(engine):
     if engine == "cudf":
@@ -819,7 +819,7 @@ def test_set_index_interpolate_int(engine):
     DASK_EXPR_ENABLED, reason="we don't do division inference for 1 partition frames"
 )
 @pytest.mark.parametrize(
-    "engine", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "engine", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 def test_set_index_interpolate_large_uint(engine):
     if engine == "cudf":
@@ -1577,7 +1577,7 @@ def test_sort_values_deprecated_shuffle_keyword(shuffle_method):
 
 
 @pytest.mark.parametrize(
-    "backend", ["pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
+    "backend", ["fireducks.pandas", pytest.param("cudf", marks=pytest.mark.gpu)]
 )
 @pytest.mark.parametrize("by", ["x", "z", ["x", "z"], ["z", "x"]])
 @pytest.mark.parametrize("ascending", [True, False])

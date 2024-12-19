@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import pandas as pd
+import fireducks.pandas as pd
 
 import dask.dataframe as dd
 

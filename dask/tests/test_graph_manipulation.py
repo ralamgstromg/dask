@@ -18,7 +18,7 @@ from dask.utils_test import import_or_none
 
 da = import_or_none("dask.array")
 dd = import_or_none("dask.dataframe")
-pd = import_or_none("pandas")
+pd = import_or_none("fireducks.pandas")
 zarr = import_or_none("zarr")
 
 

@@ -24,7 +24,7 @@ dependencies:
   # Optional dependencies
   - mimesis
   - numpy >=2  # only tested here
-  - pandas
+  - fireducks=1.1.4
   - numba
   - flask
   - fastparquet

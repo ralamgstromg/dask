@@ -4,8 +4,8 @@ import warnings
 from collections.abc import Iterable
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_scalar, union_categoricals
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_scalar, union_categoricals
 
 from dask.array.core import Array
 from dask.array.dispatch import percentile_lookup
@@ -163,7 +163,7 @@ class DataFrameBackendEntrypoint(DaskBackendEntrypoint):
 
 dataframe_creation_dispatch = CreationDispatch(
     module_name="dataframe",
-    default="pandas",
+    default="fireducks.pandas",
     entrypoint_class=DataFrameBackendEntrypoint,
     name="dataframe_creation_dispatch",
 )
@@ -771,7 +771,7 @@ class PandasBackendEntrypoint(DataFrameBackendEntrypoint):
         return data.map_partitions(cls.to_backend_dispatch(), **kwargs)
 
 
-dataframe_creation_dispatch.register_backend("pandas", PandasBackendEntrypoint())
+dataframe_creation_dispatch.register_backend("fireducks.pandas", PandasBackendEntrypoint())
 
 
 ######################################

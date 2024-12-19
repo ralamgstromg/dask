@@ -6,7 +6,7 @@ import dask
 
 
 @pytest.mark.gpu
-@pytest.mark.parametrize("backend", ["pandas", "cudf"])
+@pytest.mark.parametrize("backend", ["fireducks.pandas", "cudf"])
 def test_CreationDispatch_error_informative_message(backend):
     # Check that an informative error is emitted when a backend dispatch
     # method fails

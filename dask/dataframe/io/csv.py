@@ -14,13 +14,13 @@ except ImportError:
     psutil = None  # type: ignore
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 from fsspec.compression import compr
 from fsspec.core import get_fs_token_paths
 from fsspec.core import open as open_file
 from fsspec.core import open_files
 from fsspec.utils import infer_compression
-from pandas.api.types import (
+from fireducks.pandas.api.types import (
     CategoricalDtype,
     is_datetime64_any_dtype,
     is_float_dtype,
@@ -895,7 +895,7 @@ def make_reader(reader, reader_name, file_type):
 
 
 read_csv = dataframe_creation_dispatch.register_inplace(
-    backend="pandas",
+    backend="fireducks.pandas",
     name="read_csv",
 )(make_reader(pd.read_csv, "read_csv", "CSV"))
 

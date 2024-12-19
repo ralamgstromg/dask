@@ -12,7 +12,7 @@ from dask.sizeof import sizeof
 from dask.utils import funcname, tmpdir
 
 try:
-    import pandas as pd
+    import fireducks.pandas as pd
 except ImportError:
     pd = None
 

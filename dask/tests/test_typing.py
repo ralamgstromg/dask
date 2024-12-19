@@ -27,7 +27,7 @@ except ImportError:
 
 
 pytest.importorskip("numpy")
-pytest.importorskip("pandas")
+pytest.importorskip("fireducks.pandas")
 da = pytest.importorskip("dask.array")
 db = pytest.importorskip("dask.bag")
 dds = pytest.importorskip("dask.datasets")

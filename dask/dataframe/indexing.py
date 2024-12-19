@@ -5,8 +5,8 @@ from collections import defaultdict
 from datetime import datetime
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_bool_dtype
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_bool_dtype
 
 from dask.array.core import Array
 from dask.base import tokenize

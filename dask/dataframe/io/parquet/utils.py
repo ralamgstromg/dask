@@ -4,7 +4,7 @@ import re
 import warnings
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 from fsspec.core import expand_paths_if_needed, get_fs_token_paths, stringify_path
 from fsspec.spec import AbstractFileSystem
 

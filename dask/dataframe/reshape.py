@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import is_list_like, is_scalar
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import is_list_like, is_scalar
 
 import dask
 from dask.dataframe import methods
@@ -76,7 +76,7 @@ def get_dummies(
     Dask's version only works with Categorical data, as this is the only way to
     know the output shape without computing all the data.
 
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> import dask.dataframe as dd
     >>> s = dd.from_pandas(pd.Series(list('abca')), npartitions=2)
     >>> dd.get_dummies(s)

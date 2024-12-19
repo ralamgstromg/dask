@@ -6,11 +6,11 @@ import warnings
 
 from dask._compatibility import import_optional_dependency
 
-import_optional_dependency("pandas")
+import_optional_dependency("fireducks.pandas")
 import_optional_dependency("numpy")
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 from packaging.version import Version
 
 PANDAS_VERSION = Version(pd.__version__)
@@ -22,7 +22,7 @@ PANDAS_GE_220 = PANDAS_VERSION.release >= (2, 2, 0)
 PANDAS_GE_230 = PANDAS_VERSION.release >= (2, 3, 0)
 PANDAS_GE_300 = PANDAS_VERSION.major >= 3
 
-import pandas.testing as tm
+import fireducks.pandas.testing as tm
 
 
 def assert_categorical_equal(left, right, *args, **kwargs):

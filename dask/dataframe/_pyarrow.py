@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from functools import partial
 
-import pandas as pd
+import fireducks.pandas as pd
 from packaging.version import Version
 
 from dask._compatibility import import_optional_dependency

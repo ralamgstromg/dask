@@ -5,7 +5,7 @@ import operator
 import warnings
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 
 import dask

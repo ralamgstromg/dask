@@ -4,7 +4,7 @@ import json
 import os
 
 import fsspec
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
 
@@ -110,7 +110,7 @@ def test_read_json_basic(orient):
         assert_eq(actual, df)
 
 
-@pytest.mark.parametrize("fkeyword", ["pandas", "json"])
+@pytest.mark.parametrize("fkeyword", ["fireducks.pandas", "json"])
 def test_read_json_fkeyword(fkeyword):
     def _my_json_reader(*args, **kwargs):
         if fkeyword == "json":

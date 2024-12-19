@@ -28,7 +28,7 @@ def test_upstream_packages_installed():
         # "fastparquet",
         # "fsspec",
         "numpy",
-        "pandas",
+        "fireducks.pandas",
         # "partd",
         "pyarrow",
         # "s3fs",

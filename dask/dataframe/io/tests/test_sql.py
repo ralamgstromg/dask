@@ -11,7 +11,7 @@ from dask.dataframe.io.sql import read_sql, read_sql_query, read_sql_table
 from dask.dataframe.utils import assert_eq, get_string_dtype
 from dask.utils import tmpfile
 
-pd = pytest.importorskip("pandas")
+pd = pytest.importorskip("fireducks.pandas")
 dd = pytest.importorskip("dask.dataframe")
 pytest.importorskip("sqlalchemy")
 pytest.importorskip("sqlite3")

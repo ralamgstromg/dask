@@ -5,7 +5,7 @@ from typing import Protocol, runtime_checkable
 from uuid import uuid4
 
 import fsspec
-import pandas as pd
+import fireducks.pandas as pd
 from fsspec.implementations.local import LocalFileSystem
 from packaging.version import Version
 
@@ -46,9 +46,9 @@ def _get_pyarrow_dtypes(schema, categories, dtype_backend=None):
         type_mapper = lambda t: t.to_pandas_dtype()
 
     # Check for pandas metadata
-    has_pandas_metadata = schema.metadata is not None and b"pandas" in schema.metadata
+    has_pandas_metadata = schema.metadata is not None and b"fireducks.pandas" in schema.metadata
     if has_pandas_metadata:
-        pandas_metadata = json.loads(schema.metadata[b"pandas"].decode("utf8"))
+        pandas_metadata = json.loads(schema.metadata[b"fireducks.pandas"].decode("utf8"))
         pandas_metadata_dtypes = {
             c.get("field_name", c.get("name", None)): c["numpy_type"]
             for c in pandas_metadata.get("columns", [])

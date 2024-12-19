@@ -6,7 +6,7 @@ from functools import lru_cache
 from time import sleep
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
 

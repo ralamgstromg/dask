@@ -8,7 +8,7 @@ from collections import OrderedDict, defaultdict
 from contextlib import ExitStack
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import tlz as toolz
 from packaging.version import Version
 

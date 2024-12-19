@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 import pytest
-from pandas.util import hash_pandas_object
+from fireducks.pandas.util import hash_pandas_object
 
 import dask.dataframe as dd
 from dask.dataframe import _compat

@@ -8,7 +8,7 @@ from threading import Lock
 from typing import TYPE_CHECKING, Literal, overload
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 
 import dask.array as da
 from dask._task_spec import TaskRef
@@ -312,7 +312,7 @@ def from_pandas(
     return new_dd_object(dsk, name, data, divisions)
 
 
-@dataframe_creation_dispatch.register_inplace("pandas")
+@dataframe_creation_dispatch.register_inplace("fireducks.pandas")
 def from_dict(
     data,
     npartitions,
@@ -937,7 +937,7 @@ def from_map(
 
     Examples
     --------
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> import dask.dataframe as dd
     >>> func = lambda x, size=0: pd.Series([x] * size)
     >>> inputs = ["A", "B"]
@@ -952,7 +952,7 @@ def from_map(
     IO functions, like ``read_csv`` (which are already just
     ``from_map`` wrapper functions):
 
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> import dask.dataframe as dd
     >>> paths = ["0.csv", "1.csv", "2.csv"]
     >>> dd.from_map(pd.read_csv, paths).head()  # doctest: +SKIP
@@ -972,7 +972,7 @@ def from_map(
     in each of the files in a dataset, you can generate a
     DataFrame collection with a global RangeIndex:
 
-    >>> import pandas as pd
+    >>> import fireducks.pandas as pd
     >>> import numpy as np
     >>> import dask.dataframe as dd
     >>> paths = ["0.csv", "1.csv", "2.csv"]

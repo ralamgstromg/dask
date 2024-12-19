@@ -104,7 +104,7 @@ def test_persist_nested(c):
 
 
 def test_futures_to_delayed_dataframe(c):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     df = pd.DataFrame({"x": [1, 2, 3]})
@@ -124,7 +124,7 @@ def test_futures_to_delayed_dataframe(c):
 def test_from_delayed_dataframe(c):
     # Check that Delayed keys in the form of a tuple
     # are properly serialized in `from_delayed`
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     df = pd.DataFrame({"x": range(20)})
@@ -135,7 +135,7 @@ def test_from_delayed_dataframe(c):
 
 @pytest.mark.parametrize("fuse", [True, False])
 def test_fused_blockwise_dataframe_merge(c, fuse):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Generate two DataFrames with more partitions than
@@ -164,7 +164,7 @@ def test_fused_blockwise_dataframe_merge(c, fuse):
 @pytest.mark.parametrize("broadcast", [True, False])
 def test_dataframe_broadcast_merge(c, on, broadcast):
     # See: https://github.com/dask/dask/issues/9870
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     pdfl = pd.DataFrame({"a": [1, 2] * 2, "b_left": range(4)})
@@ -202,7 +202,7 @@ def test_default_scheduler_on_worker(c, computation, use_distributed, scheduler)
     scheduler when being computed within a task?
     """
 
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Track how many submits/update-graph were received by the scheduler
@@ -280,7 +280,7 @@ async def test_local_get_with_distributed_active(c, s, a, b):
 @pytest.mark.xfail_with_pyarrow_strings
 def test_to_hdf_distributed(c):
     pytest.importorskip("numpy")
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
 
     from dask.dataframe.io.tests.test_hdf import test_to_hdf
 
@@ -305,7 +305,7 @@ def test_to_hdf_distributed(c):
 @pytest.mark.xfail_with_pyarrow_strings
 def test_to_hdf_scheduler_distributed(npartitions, c):
     pytest.importorskip("numpy")
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
 
     from dask.dataframe.io.tests.test_hdf import test_to_hdf_schedulers
 
@@ -314,7 +314,7 @@ def test_to_hdf_scheduler_distributed(npartitions, c):
 
 @gen_cluster(client=True)
 async def test_serializable_groupby_agg(c, s, a, b):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     df = pd.DataFrame({"x": [1, 2, 3, 4], "y": [1, 0, 1, 0]})
     ddf = dd.from_pandas(df, npartitions=2)
@@ -544,7 +544,7 @@ def test_blockwise_array_creation(c, io, fuse):
 @pytest.mark.parametrize("fuse", [True, False, None])
 @pytest.mark.parametrize("from_futures", [True, False])
 def test_blockwise_dataframe_io(c, tmpdir, io, fuse, from_futures):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     df = pd.DataFrame({"x": [1, 2, 3] * 5, "y": range(15)})
@@ -591,7 +591,7 @@ def test_blockwise_dataframe_io(c, tmpdir, io, fuse, from_futures):
 def test_blockwise_fusion_after_compute(c):
     # See: https://github.com/dask/dask/issues/7720
 
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     # Simple sequence of Dask-Dataframe manipulations
@@ -667,7 +667,7 @@ def test_blockwise_different_optimization(c):
 async def test_combo_of_layer_types(c, s, a, b):
     """Check pack/unpack of a HLG that has every type of Layers!"""
     np = pytest.importorskip("numpy")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     da = pytest.importorskip("dask.array")
     dd = pytest.importorskip("dask.dataframe")
 
@@ -726,7 +726,7 @@ def test_blockwise_concatenate(c):
 
 @gen_cluster(client=True)
 async def test_map_partitions_partition_info(c, s, a, b):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     ddf = dd.from_pandas(pd.DataFrame({"a": range(10)}), npartitions=2)
@@ -740,7 +740,7 @@ async def test_map_partitions_partition_info(c, s, a, b):
 @gen_cluster(client=True)
 async def test_futures_in_subgraphs(c, s, a, b):
     """Copied from distributed (tests/test_client.py)"""
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     ddf = dd.from_pandas(
@@ -769,7 +769,7 @@ async def test_futures_in_subgraphs(c, s, a, b):
 )
 @gen_cluster(client=True, nthreads=[("", 1)] * 2)
 async def test_shuffle_priority(c, s, a, b, max_branch, expected_layer_type):
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled():
         pytest.skip("Checking layers doesn't make sense")
@@ -812,7 +812,7 @@ async def test_shuffle_priority(c, s, a, b, max_branch, expected_layer_type):
 async def test_map_partitions_da_input(c, s, a, b):
     """Check that map_partitions can handle a dask array input"""
     np = pytest.importorskip("numpy")
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     da = pytest.importorskip("dask.array")
     dd = pytest.importorskip("dask.dataframe")
     datasets = pytest.importorskip("dask.datasets")
@@ -834,7 +834,7 @@ def test_map_partitions_df_input():
     Check that map_partitions can handle a delayed
     partition of a dataframe input
     """
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     if dd._dask_expr_enabled():
         pytest.skip("map partitions can't deal with delayed properly")
@@ -880,7 +880,7 @@ def test_map_partitions_df_input():
 @gen_cluster(client=True)
 async def test_to_sql_engine_kwargs(c, s, a, b):
     # https://github.com/dask/dask/issues/8738
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
     pytest.importorskip("sqlalchemy")
 
@@ -904,7 +904,7 @@ async def test_to_sql_engine_kwargs(c, s, a, b):
 @gen_cluster(client=True)
 async def test_non_recursive_df_reduce(c, s, a, b):
     # See https://github.com/dask/dask/issues/8773
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     dd = pytest.importorskip("dask.dataframe")
 
     class SomeObject:
@@ -927,7 +927,7 @@ async def test_non_recursive_df_reduce(c, s, a, b):
 
 def test_set_index_no_resursion_error(c):
     # see: https://github.com/dask/dask/issues/8955
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     pytest.importorskip("dask.dataframe")
     try:
         ddf = (
@@ -981,7 +981,7 @@ def test_get_scheduler_with_distributed_active_reset_config(c):
 )
 def test_get_scheduler_lock(scheduler, expected_classes):
     pytest.importorskip("numpy")
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     da = pytest.importorskip("dask.array", reason="Requires dask.array")
     db = pytest.importorskip("dask.bag", reason="Requires dask.bag")
     dd = pytest.importorskip("dask.dataframe", reason="Requires dask.dataframe")
@@ -1005,7 +1005,7 @@ def test_get_scheduler_lock(scheduler, expected_classes):
 )
 def test_get_scheduler_lock_distributed(c, multiprocessing_method):
     pytest.importorskip("numpy")
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     da = pytest.importorskip("dask.array", reason="Requires dask.array")
     dd = pytest.importorskip("dask.dataframe", reason="Requires dask.dataframe")
 
@@ -1027,7 +1027,7 @@ def test_write_single_hdf(c, lock_param):
     """https://github.com/dask/dask/issues/9972 and
     https://github.com/dask/dask/issues/10315
     """
-    pytest.importorskip("pandas")
+    pytest.importorskip("fireducks.pandas")
     pytest.importorskip("dask.dataframe")
     pytest.importorskip("tables")
     with tmpfile(extension="hd5") as f:

@@ -4,7 +4,7 @@ import functools
 import warnings
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 
 from dask.dataframe._compat import check_to_pydatetime_deprecation
 from dask.utils import derived_from

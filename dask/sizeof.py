@@ -140,10 +140,10 @@ def register_numpy():
         return int(x.nbytes)
 
 
-@sizeof.register_lazy("pandas")
+@sizeof.register_lazy("fireducks.pandas")
 def register_pandas():
     import numpy as np
-    import pandas as pd
+    import fireducks.pandas as pd
 
     OBJECT_DTYPES = (object, pd.StringDtype("python"))
 

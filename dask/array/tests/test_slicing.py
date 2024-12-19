@@ -563,7 +563,7 @@ def test_sanitize_index_element():
 
 
 def test_sanitize_index():
-    pd = pytest.importorskip("pandas")
+    pd = pytest.importorskip("fireducks.pandas")
     with pytest.raises(TypeError):
         sanitize_index("Hello!")
 

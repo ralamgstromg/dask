@@ -10,8 +10,8 @@ from pprint import pformat
 from typing import Any, ClassVar, Literal, cast
 
 import numpy as np
-import pandas as pd
-from pandas.api.types import (
+import fireducks.pandas as pd
+from fireducks.pandas.api.types import (
     is_bool_dtype,
     is_datetime64_any_dtype,
     is_extension_array_dtype,
@@ -1088,7 +1088,7 @@ Dask Name: {name}, {layers}"""
         --------
         Given a DataFrame, Series, or Index, such as:
 
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> df = pd.DataFrame({'x': [1, 2, 3, 4, 5],
         ...                    'y': [1., 2., 3., 4., 5.]})
@@ -1241,7 +1241,7 @@ Dask Name: {name}, {layers}"""
         --------
         Given a DataFrame, Series, or Index, such as:
 
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> df = pd.DataFrame({'x': [1, 2, 4, 7, 11],
         ...                    'y': [1., 2., 3., 4., 5.]})
@@ -1391,7 +1391,7 @@ Dask Name: {name}, {layers}"""
 
         Examples
         --------
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> df = pd.DataFrame({'x': range(50), 'y': range(50, 100)})
         >>> ddf = dd.from_pandas(df, npartitions=4)
@@ -5248,7 +5248,7 @@ class DataFrame(_Frame):
         by specifying both that the column is pre-sorted and the particular
         divisions along which is is separated
 
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> divisions = pd.date_range(start="2021-01-01", end="2021-01-07", freq='1D')
         >>> divisions
         DatetimeIndex(['2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04',
@@ -5512,7 +5512,7 @@ class DataFrame(_Frame):
 
         Examples
         --------
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> df = pd.DataFrame({'x': [1, 2, 1, 2],
         ...                    'y': [1, 2, 3, 4],
@@ -6008,7 +6008,7 @@ class DataFrame(_Frame):
 
         Examples
         --------
-        >>> import pandas as pd
+        >>> import fireducks.pandas as pd
         >>> import dask.dataframe as dd
         >>> df = pd.DataFrame({'x': [1, 2, 3, 4, 5],
         ...                    'y': [1., 2., 3., 4., 5.]})

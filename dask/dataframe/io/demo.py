@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass, field
 from typing import Any, cast
 
 import numpy as np
-import pandas as pd
+import fireducks.pandas as pd
 
 from dask.dataframe._compat import PANDAS_GE_220, PANDAS_GE_300
 from dask.dataframe._pyarrow import is_object_string_dtype

@@ -6,7 +6,7 @@ from fnmatch import fnmatch
 from glob import glob
 from warnings import warn
 
-import pandas as pd
+import fireducks.pandas as pd
 from fsspec.utils import build_name_function, stringify_path
 from tlz import merge
 
@@ -346,7 +346,7 @@ class HDFFunctionWrapper(DataFrameIOFunction):
         return result
 
 
-@dataframe_creation_dispatch.register_inplace("pandas")
+@dataframe_creation_dispatch.register_inplace("fireducks.pandas")
 def read_hdf(
     pattern,
     key,
