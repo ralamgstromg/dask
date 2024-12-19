@@ -12,6 +12,6 @@ pip install --upgrade setuptools wheel
 
 #source ../.venv/bin/activate
 
-python -m pip install -e ".[complete,test]"
+python -m pip install -e ".[complete]"
 
 pip list

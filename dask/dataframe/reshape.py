@@ -194,7 +194,7 @@ def pivot_table(df, index=None, columns=None, values=None, aggfunc="mean"):
 
     See Also
     --------
-    pandas.DataFrame.pivot_table
+    fireducks.pandas.DataFrame.pivot_table
     """
 
     if not is_scalar(index) or index is None:
@@ -348,7 +348,7 @@ def melt(
 
     See Also
     --------
-    pandas.DataFrame.melt
+    fireducks.pandas.DataFrame.melt
     """
     # let pandas do upcasting as needed during melt
     with dask.config.set({"dataframe.convert-string": False}):

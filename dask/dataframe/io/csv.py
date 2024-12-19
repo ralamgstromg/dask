@@ -1021,7 +1021,7 @@ def to_csv(
     compute_kwargs : dict, optional
         Options to be passed in to the compute method
     kwargs : dict, optional
-        Additional parameters to pass to :meth:`pandas.DataFrame.to_csv`.
+        Additional parameters to pass to :meth:`fireducks.pandas.DataFrame.to_csv`.
 
     Returns
     -------

@@ -428,7 +428,7 @@ def test_check_meta():
     df2 = df[["a", "b", "d", "e"]]
     with pytest.raises(ValueError) as err:
         check_meta(df2, meta2, funcname="from_delayed")
-    frame = "pandas.core.frame.DataFrame" if not PANDAS_GE_300 else "pandas.DataFrame"
+    frame = "fireducks.pandas.core.frame.DataFrame" if not PANDAS_GE_300 else "fireducks.pandas.DataFrame"
 
     exp = (
         "Metadata mismatch found in `from_delayed`.\n"

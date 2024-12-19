@@ -203,7 +203,7 @@ def from_pandas(
 
     Parameters
     ----------
-    data : pandas.DataFrame or pandas.Series
+    data : fireducks.pandas.DataFrame or fireducks.pandas.Series
         The DataFrame/Series with which to construct a Dask DataFrame/Series
     npartitions : int, optional
         The number of partitions of the index to create. Note that if there
@@ -246,7 +246,7 @@ def from_pandas(
     Raises
     ------
     TypeError
-        If something other than a ``pandas.DataFrame`` or ``pandas.Series`` is
+        If something other than a ``fireducks.pandas.DataFrame`` or ``fireducks.pandas.Series`` is
         passed in.
 
     See Also

@@ -148,7 +148,7 @@ class Engine:
 
         Returns
         -------
-        meta: pandas.DataFrame
+        meta: fireducks.pandas.DataFrame
             An empty DataFrame object to use for metadata.
             Should have appropriate column names and dtypes but need not have
             any actual data

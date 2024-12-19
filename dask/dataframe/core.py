@@ -434,7 +434,7 @@ class _Frame(DaskMethodsMixin, OperatorMethodMixin):
     name: str
         The key prefix that specifies which keys in the dask comprise this
         particular DataFrame / Series
-    meta: pandas.DataFrame, pandas.Series, or pandas.Index
+    meta: fireducks.pandas.DataFrame, fireducks.pandas.Series, or fireducks.pandas.Index
         An empty pandas object with names, dtypes, and indices matching the
         expected output.
     divisions: tuple of index values
@@ -1349,7 +1349,7 @@ Dask Name: {name}, {layers}"""
         ----------
         chunk : callable
             Function to operate on each partition. Should return a
-            ``pandas.DataFrame``, ``pandas.Series``, or a scalar.
+            ``fireducks.pandas.DataFrame``, ``fireducks.pandas.Series``, or a scalar.
         aggregate : callable, optional
             Function to operate on the concatenated result of ``chunk``. If not
             specified, defaults to ``chunk``. Used to do the final aggregation
@@ -1364,7 +1364,7 @@ Dask Name: {name}, {layers}"""
             - DataFrame: Input is a DataFrame, with one row per partition.
               Columns are the columns in the output dataframes.
 
-            Should return a ``pandas.DataFrame``, ``pandas.Series``, or a
+            Should return a ``fireducks.pandas.DataFrame``, ``pandas.Series``, or a
             scalar.
         combine : callable, optional
             Function to operate on intermediate concatenated results of
@@ -1694,7 +1694,7 @@ Dask Name: {name}, {layers}"""
             Max number of bytes of memory for each partition. Use numbers or
             strings like 5MB. If specified npartitions and divisions will be
             ignored. Note that the size reflects the number of bytes used as
-            computed by ``pandas.DataFrame.memory_usage``, which will not
+            computed by ``fireducks.pandas.DataFrame.memory_usage``, which will not
             necessarily match the size when storing to disk.
 
             .. warning::
@@ -1732,7 +1732,7 @@ Dask Name: {name}, {layers}"""
         See Also
         --------
         DataFrame.memory_usage_per_partition
-        pandas.DataFrame.memory_usage
+        fireducks.pandas.DataFrame.memory_usage
         """
         if isinstance(divisions, int):
             warnings.warn(
@@ -1948,7 +1948,7 @@ Dask Name: {name}, {layers}"""
         See Also
         --------
         DataFrame.random_split
-        pandas.DataFrame.sample
+        fireducks.pandas.DataFrame.sample
         """
         if n is not None:
             msg = (
@@ -4822,8 +4822,8 @@ class DataFrame(_Frame):
     name: str
         The key prefix that specifies which keys in the dask comprise this
         particular DataFrame
-    meta: pandas.DataFrame
-        An empty ``pandas.DataFrame`` with names, dtypes, and index matching
+    meta: fireducks.pandas.DataFrame
+        An empty ``fireducks.pandas.DataFrame`` with names, dtypes, and index matching
         the expected output.
     divisions: tuple of index values
         Values along which we partition our blocks on the index

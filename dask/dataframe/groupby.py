@@ -1105,7 +1105,7 @@ def _groupby_apply_funcs(df, *by, **kwargs):
 
     Parameters
     ----------
-    df: pandas.DataFrame
+    df: fireducks.pandas.DataFrame
         The dataframe to work on.
     by: list of groupers
         If given, they are added to the keyword arguments as the ``by``
@@ -1358,7 +1358,7 @@ class _GroupBy:
     slice: str, list
         The slice keys applied to GroupBy result
     group_keys: bool | None
-        Passed to pandas.DataFrame.groupby()
+        Passed to fireducks.pandas.DataFrame.groupby()
     dropna: bool
         Whether to drop null values from groupby index
     sort: bool

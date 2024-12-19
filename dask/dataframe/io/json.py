@@ -34,7 +34,7 @@ def to_json(
 ):
     """Write dataframe into JSON text files
 
-    This utilises ``pandas.DataFrame.to_json()``, and most parameters are
+    This utilises ``fireducks.pandas.DataFrame.to_json()``, and most parameters are
     passed through - see its docstring.
 
     Differences: orient is 'records' by default, with lines=True; this
