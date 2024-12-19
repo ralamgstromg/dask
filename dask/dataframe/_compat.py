@@ -22,7 +22,7 @@ PANDAS_GE_220 = PANDAS_VERSION.release >= (2, 2, 0)
 PANDAS_GE_230 = PANDAS_VERSION.release >= (2, 3, 0)
 PANDAS_GE_300 = PANDAS_VERSION.major >= 3
 
-import fireducks.pandas.testing as tm
+import pandas.testing as tm
 
 
 def assert_categorical_equal(left, right, *args, **kwargs):

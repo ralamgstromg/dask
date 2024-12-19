@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import fireducks.pandas as pd
 import pytest
-from fireducks.pandas.util import hash_pandas_object
+from pandas.util import hash_pandas_object
 
 import dask.dataframe as dd
 from dask.dataframe import _compat

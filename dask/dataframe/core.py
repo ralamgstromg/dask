@@ -11,7 +11,7 @@ from typing import Any, ClassVar, Literal, cast
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import (
+from pandas.api.types import (
     is_bool_dtype,
     is_datetime64_any_dtype,
     is_extension_array_dtype,

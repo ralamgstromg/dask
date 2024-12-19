@@ -6,7 +6,7 @@ import numpy as np
 import fireducks.pandas as pd
 import pytest
 from packaging.version import Version
-from fireducks.pandas.api.types import is_object_dtype
+from pandas.api.types import is_object_dtype
 
 import dask.dataframe as dd
 from dask._compatibility import PY_VERSION

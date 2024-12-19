@@ -12,7 +12,7 @@ from typing import TypeVar, overload
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import is_dtype_equal
+from pandas.api.types import is_dtype_equal
 
 import dask
 from dask.base import get_scheduler, is_dask_collection

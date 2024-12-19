@@ -20,7 +20,7 @@ from fsspec.core import get_fs_token_paths
 from fsspec.core import open as open_file
 from fsspec.core import open_files
 from fsspec.utils import infer_compression
-from fireducks.pandas.api.types import (
+from pandas.api.types import (
     CategoricalDtype,
     is_datetime64_any_dtype,
     is_float_dtype,

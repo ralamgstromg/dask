@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import fireducks.pandas as pd
 import pytest
-from fireducks.pandas.tests.extension.decimal.array import DecimalDtype
+from pandas.tests.extension.decimal.array import DecimalDtype
 
 from dask.dataframe._pyarrow import (
     is_object_string_dataframe,

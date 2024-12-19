@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.core.resample import Resampler as pd_Resampler
+from pandas.core.resample import Resampler as pd_Resampler
 
 from dask.base import tokenize
 from dask.dataframe import methods

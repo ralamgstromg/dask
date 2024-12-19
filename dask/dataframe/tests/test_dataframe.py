@@ -15,8 +15,8 @@ from textwrap import dedent
 import numpy as np
 import fireducks.pandas as pd
 import pytest
-from fireducks.pandas.errors import PerformanceWarning
-from fireducks.pandas.io.formats import format as pandas_format
+from pandas.errors import PerformanceWarning
+from pandas.io.formats import format as pandas_format
 
 import dask
 import dask.array as da

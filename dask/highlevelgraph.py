@@ -933,7 +933,7 @@ def to_graphviz(
                 )
 
             if layer_ca.get("type") == "dask.dataframe.core.DataFrame":
-                dftype = {"fireducks.pandas.core.frame.DataFrame": "fireducks.pandas"}
+                dftype = {"fireducks.pandas.frame.DataFrame": "fireducks.pandas"}
                 cols = layer_ca.get("columns")
 
                 node_tooltips += (

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import is_list_like, is_scalar
+from pandas.api.types import is_list_like, is_scalar
 
 import dask
 from dask.dataframe import methods

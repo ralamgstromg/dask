@@ -75,7 +75,7 @@ import math
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import is_datetime64_dtype, is_integer_dtype
+from pandas.api.types import is_datetime64_dtype, is_integer_dtype
 from tlz import merge, merge_sorted, take
 
 from dask.base import tokenize

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import is_scalar as pd_is_scalar
+from pandas.api.types import is_scalar as pd_is_scalar
 
 from dask.array import Array
 from dask.dataframe.core import Series

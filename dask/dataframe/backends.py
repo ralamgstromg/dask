@@ -5,7 +5,7 @@ from collections.abc import Iterable
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.api.types import is_scalar, union_categoricals
+from pandas.api.types import is_scalar, union_categoricals
 
 from dask.array.core import Array
 from dask.array.dispatch import percentile_lookup

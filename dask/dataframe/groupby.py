@@ -10,7 +10,7 @@ from numbers import Integral
 
 import numpy as np
 import fireducks.pandas as pd
-from fireducks.pandas.core.apply import reconstruct_func, validate_func_kwargs
+from pandas.core.apply import reconstruct_func, validate_func_kwargs
 
 from dask.base import is_dask_collection, tokenize
 from dask.core import flatten

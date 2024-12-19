@@ -23,6 +23,8 @@ from threading import Lock
 from typing import Any, ClassVar, Literal, TypeVar, cast, overload
 from weakref import WeakValueDictionary
 
+#from fireducks.pandas import frame
+
 import tlz as toolz
 
 from dask import config
@@ -1507,7 +1509,7 @@ def is_arraylike(x) -> bool:
 def is_dataframe_like(df) -> bool:
     """Looks like a Pandas DataFrame"""
     if (df.__class__.__module__, df.__class__.__name__) == (
-        "fireducks.pandas.core.frame",
+        "fireducks.pandas.frame",
         "DataFrame",
     ):
         # fast exec for most likely input

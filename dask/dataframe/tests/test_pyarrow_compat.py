@@ -6,7 +6,7 @@ from decimal import Decimal
 
 import numpy as np
 import fireducks.pandas as pd
-import fireducks.pandas._testing as tm
+import pandas._testing as tm
 import pytest
 
 from dask.dataframe.utils import get_string_dtype
